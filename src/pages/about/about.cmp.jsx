@@ -53,11 +53,11 @@ class AboutPage extends React.Component {
           </div>
         </div>
         <div className="about-image-area flex-c">
-          <img
-            src="https://res.cloudinary.com/ilnphotography/image/upload/v1578492915/HomePage/shadow_zsw6h2.png"
+          {/* <img
+            src=""
             className={`about-img ${this.state.revield ? "show" : ""}`}
-            alt="iliyan-portrait"
-          />
+            alt="benjamin-copinet-portrait"
+          /> */}
         </div>
       </div>
     );
