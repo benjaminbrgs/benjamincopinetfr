@@ -1,0 +1,175 @@
+.about {
+  height: 100vh;
+  width: 100%;
+  padding: 9rem 4rem 0 4rem;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+
+  .letters {
+    font-size: 12.5rem;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.449);
+    z-index: -100;
+    font-weight: 900;
+    top: 5rem;
+    font-weight: 900;
+    font-family: "Exo";
+    transform: translate(-110%);
+    transition: all 2s ease-in-out;
+  }
+
+  .backround {
+    position: absolute;
+    z-index: -101;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, #9f9f9f 62%, rgba(45, 35, 35, 0) 50%);
+  }
+
+  &-img {
+    height: 100%;
+    opacity: 0.99;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateY(20%);
+    transition: all .5s;
+    opacity: 0;
+  }
+
+  &-text,
+  &-image-area {
+    height: 100%;
+    flex-direction: column;
+  }
+
+  &-text {
+    align-items: flex-start;
+    color: rgb(37, 35, 35);
+    width: 40%;
+    transform: translateY(10%);
+    transition: all .8s;
+    transition-delay: 1s;
+    opacity: 0;
+
+    p {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+
+      word-spacing: .2rem;
+      text-align: justify;
+
+    }
+
+    h2 {
+      font-weight: 900;
+
+    }
+  }
+
+  &-image-area {
+    position: relative;
+    width: 60%;
+    align-items: flex-end;
+  }
+
+  &-title {
+    position: absolute;
+    color: white;
+    padding: 3rem 10rem;
+    font-size: 5rem;
+    bottom: 0rem;
+    left: -11rem;
+  }
+
+  .about-social {
+    margin-top: 2rem;
+  }
+
+  .react-icons {
+    margin-left: 1rem;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    color: #343333;
+  }
+
+  .link-button {
+    border: 1px solid #343333;
+    border-radius: 2px;
+    color: #525050;
+    padding: 0.5rem 1rem;
+  }
+
+  .show {
+    transform: translate(0%);
+    opacity: 1;
+  }
+}
+
+
+@media (max-width: 1025px) {
+  .about {
+    flex-direction: column-reverse;
+    height: auto;
+
+    .letters {
+      font-size: 7rem;
+    }
+
+    &-text,
+    &-image-area {
+      width: 100%;
+      flex-direction: column;
+      
+    }
+
+    .about-text {
+      margin: 2rem;
+      justify-content: flex-start;
+      align-items: flex-start;
+      color: #ffffff;
+    }
+
+    &-img {
+      box-shadow: 0 4px 15px -15px rgb(86, 86, 86);
+      width: 100%;
+    }
+
+    .link-button {
+      border: 1px solid #ffffff;
+      color: #ffffff;
+    }
+
+    .react-icons {
+      color: #ffffff;
+    }
+  }
+}
+
+@media (max-width: 800px) {}
+
+@media (max-width: 600px) {
+  .about {
+    .letters {
+      font-size: 4rem;
+    }
+  }
+  .about-text {
+    margin: 2rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: #525050;
+  }
+
+  .title {
+    
+    font-size: 4rem;
+  
+  }
+}
