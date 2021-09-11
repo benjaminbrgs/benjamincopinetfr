@@ -18,7 +18,7 @@
   }
 
   .title {
-    font-family: 'Exo', sans-serif;
+    font-family: "Exo", sans-serif;
     position: absolute;
     z-index: -1;
     top: 8rem;
@@ -26,32 +26,29 @@
     font-size: 6rem;
     letter-spacing: 1px;
     color: rgb(255, 255, 255);
-
   }
 
   .title-border {
-    font-family: 'Exo', sans-serif;
+    font-family: "Exo", sans-serif;
     position: absolute;
     color: transparent;
     top: 8rem;
     left: -6.7rem;
     font-size: 6rem;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #191a1d;
+    -webkit-text-stroke-color: #ffffff;
     letter-spacing: 1px;
   }
 
   .title,
   .title-border {
-    
-    transition: all .5s ease-out;
+    transition: all 0.5s ease-out;
     transform: translateX(-10rem);
     opacity: 0;
-    transition-delay: .5s;
+    transition-delay: 0.5s;
   }
 
   .container-subtitile {
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,8 +57,8 @@
     left: -6.2rem;
     opacity: 0;
     transform: translateX(-10rem);
-    transition: all .5s ease-out;
-    transition-delay: .7s;
+    transition: all 0.5s ease-out;
+    transition-delay: 0.7s;
   }
 
   .subtitle {
@@ -75,14 +72,12 @@
   .redline {
     width: 0;
     height: 2px;
-    background-color: crimson;
-    transition: all .6s ease-out;
-    transition-delay: .7s;
-
+    background-color: #58254f;
+    transition: all 0.6s ease-out;
+    transition-delay: 0.7s;
   }
 
   .revield {
-
     .title,
     .title-border,
     .container-subtitile {
@@ -93,19 +88,17 @@
     .redline {
       width: 2rem;
     }
-
   }
 }
 
 @media (max-width: 1025px) {
   .slider-container {
-
     .title,
     .title-border {
       left: -4rem;
     }
 
-    .container-subtitile{
+    .container-subtitile {
       left: -2.5rem;
     }
   }
@@ -113,22 +106,19 @@
 
 @media (max-width: 800px) {
   .slider-container {
-
     .title,
     .title-border {
       left: -2rem;
     }
 
-    .container-subtitile{
+    .container-subtitile {
       left: -1.5rem;
     }
   }
-
 }
 
 @media (max-width: 600px) {
   .slider-container {
-
     .slide {
       width: 100%;
       height: 100%;
@@ -136,17 +126,16 @@
 
     .title,
     .title-border {
-      font-size:5rem;
+      font-size: 5rem;
       left: 1rem;
-      top:42%;
-      color:white;
+      top: 42%;
+      color: white;
       -webkit-text-stroke-color: white;
     }
 
-    .container-subtitile{
+    .container-subtitile {
       left: 1.5rem;
-      top:56%
-      
+      top: 56%;
     }
   }
 }

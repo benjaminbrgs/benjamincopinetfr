@@ -1,5 +1,5 @@
 $grey-primary: grey;
-$grey-secondary:rgb(160, 160, 160);
+$grey-secondary: rgb(160, 160, 160);
 
 .contact {
   padding: 7em 7rem 3rem 7rem;
@@ -7,13 +7,12 @@ $grey-secondary:rgb(160, 160, 160);
   position: relative;
   height: 100vh;
   color: grey;
-  
 
   &-title {
     margin-bottom: 2rem;
     font-weight: 700;
     font-size: 3.2rem;
-    color: $grey-primary;
+    color: white;
   }
 
   &-content {
@@ -37,15 +36,12 @@ $grey-secondary:rgb(160, 160, 160);
   &-left {
     height: 100%;
     width: 50%;
-    border-right: .5px solid $grey-primary;
+    border-right: 0.5px solid $grey-primary;
     font-size: 1.5rem;
     padding: 5rem 3rem;
-
   }
 
   &-details {
-    
-
     h2 {
       margin-bottom: 2rem;
       font-size: 2rem;
@@ -65,7 +61,7 @@ $grey-secondary:rgb(160, 160, 160);
     color: grey;
     border-radius: 3px;
     font-family: inherit;
-    border: .5px solid $grey-primary;
+    border: 0.5px solid $grey-primary;
     cursor: pointer;
   }
 
@@ -75,19 +71,17 @@ $grey-secondary:rgb(160, 160, 160);
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url("https://res.cloudinary.com/ilnphotography/image/upload/v1577365301/Travel/WEB-77_mwl7op.jpg");
+    background-image: url("https://www.api.benjamincopinet.fr/wp-content/uploads/2019/11/benjamincopinet.fr-paysages-003.webp");
     background-size: cover;
     background-position: center;
     // filter: grayscale(1);
-    opacity: 0.2;
+    opacity: 0.8;
     z-index: -1;
   }
-
 }
 
 @media (max-width: 1023px) {
   .contact {
-   
     &-content {
       flex-direction: column;
     }
@@ -102,7 +96,6 @@ $grey-secondary:rgb(160, 160, 160);
       width: 100%;
       padding: 3rem 4rem;
     }
-
   }
 }
 
@@ -110,7 +103,6 @@ $grey-secondary:rgb(160, 160, 160);
   .contact {
     height: auto;
   }
-
 }
 
 @media (max-width: 600px) {
@@ -118,7 +110,8 @@ $grey-secondary:rgb(160, 160, 160);
     padding: 5em 1rem 3rem 1rem;
     height: auto;
 
-    &-left, &-form {
+    &-left,
+    &-form {
       height: auto;
       padding: 2rem 1.5rem;
     }
