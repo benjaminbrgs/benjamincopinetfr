@@ -13,15 +13,18 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    return fetch("https://www.api.benjamincopinet.fr/wp-json/wp/v2/galerie")
+    return fetch(
+      "https://www.api.benjamincopinet.fr/wp-json/wp/v2/galerie?_embed"
+    )
       .then((response) => response.json())
       .then((data) => {
         const galeries = data.map((galerie) => {
           return {
             id: galerie.id,
+            slug: galerie.slug,
             title: galerie.title.rendered,
             subtitle: galerie.title.rendered,
-            imageUrl: galerie.acf.image_mise_en_avant,
+            imageUrl: galerie._embedded["wp:featuredmedia"]["0"].source_url,
             revield: false,
           };
         });

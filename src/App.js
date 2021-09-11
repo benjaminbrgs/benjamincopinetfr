@@ -23,7 +23,7 @@ class App extends React.Component {
             path="/"
             component={() => <HomePage handleClick={this.handleClick} />}
           />
-          <Route exact path="/Portfolio/:title" component={PortfolioPage} />
+          <Route exact path="/portfolio/:slug" component={PortfolioPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/contact" component={ContactPage} />
         </Switch>
