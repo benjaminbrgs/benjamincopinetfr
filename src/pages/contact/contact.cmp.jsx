@@ -1,6 +1,8 @@
 import emailjs from "emailjs-com";
 import React from "react";
 import { FaEnvelope, FaMapMarker } from "react-icons/fa";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import FormInput from "../../components/form-input/form-input.cmp";
 import "./contact.scss";
 
@@ -12,32 +14,45 @@ class ContactPage extends React.Component {
       email: "",
       phone: "",
       message: "",
+      subject: "",
     };
   }
 
-  sendEmail = (e) => {
+  sendEmail = (data) => {
+    return new Promise((resolve, reject) => {
+      emailjs
+        .sendForm(
+          "benjamincopinetfr",
+          "template_jufwop9",
+          data,
+          "user_Xi8P00Kv0Ne36u3IvN9oA"
+        )
+        .then(
+          (result) => {
+            this.setState({
+              name: "",
+              email: "",
+              phone: "",
+              message: "",
+              subject: "",
+            });
+            resolve();
+          },
+          (error) => {
+            reject();
+          }
+        );
+    });
+  };
+
+  handleForm = (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        "iliyan_tsachev_ilnweb_com",
-        "template_A6tGVBFX",
-        e.target,
-        "user_yzFWSar3pajA0DntG0rT5"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          this.setState({
-            name: "",
-            email: "",
-            phone: "",
-            message: "",
-          });
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    toast.promise(this.sendEmail(e.target), {
+      pending: "Envoi en cours.",
+      success: "Le mail a bien été envoyé. 👌",
+      error:
+        "Erreur lors de l'envoi. Si le problème persiste, contactez-moi directement à benjamin.copinet@outlook.fr 🤯",
+    });
   };
 
   handleChange = (e) => {
@@ -56,14 +71,20 @@ class ContactPage extends React.Component {
               <h2>Informations de contact:</h2>
               <p>
                 <FaEnvelope className="react-icons" /> :
-                contact@benjamincopinet.fr
+                <a
+                  href="mailto:benjamin.copinet@outlook.fr"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  benjamin.copinet@outlook.fr
+                </a>
               </p>
               <p>
                 <FaMapMarker className="react-icons" /> : Reims, France
               </p>
             </div>
           </div>
-          <form className="contact-form flex-c" onSubmit={this.sendEmail}>
+          <form className="contact-form flex-c" onSubmit={this.handleForm}>
             <legend>
               <h2>
                 Remplissez le formulaire et je reviendrai vers vous dès que
@@ -75,6 +96,14 @@ class ContactPage extends React.Component {
               type="text"
               placeholder="Nom"
               value={this.state.name}
+              handleChange={this.handleChange}
+              required
+            />
+            <FormInput
+              name="subject"
+              type="text"
+              placeholder="Sujet"
+              value={this.state.subject}
               handleChange={this.handleChange}
               required
             />
@@ -106,6 +135,7 @@ class ContactPage extends React.Component {
             <input className="contact-button" type="submit" value="ENVOYER" />
           </form>
         </div>
+        <ToastContainer />
       </div>
     );
   }
