@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import Header from "./components/header/header.cmp";
@@ -13,9 +14,26 @@ class App extends React.Component {
     this.state = {};
   }
 
+  componentDidMount() {
+    fetch(`https://www.api.benjamincopinet.fr/wp-json/wp/v2/pages/4204`)
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ seo: data.acf });
+      });
+  }
+
   render() {
     return (
       <div className="App">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>{this.state.seo?.titre}</title>
+          <meta name="description" content={this.state.seo?.description} />
+          <meta name="keywords" content={this.state.seo?.keyword} />
+          <meta name="robots" content="index,follow" />
+          <link rel="canonical" href="http://benjamincopinet.fr" />
+          <link rel="icon" type="image/png" href="favicon.ico" sizes="16x16" />
+        </Helmet>
         <Header />
         <Switch>
           <Route
