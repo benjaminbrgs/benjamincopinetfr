@@ -70,17 +70,18 @@ class ContactPage extends React.Component {
             <div className="contact-details">
               <h2>Informations de contact:</h2>
               <p>
-                <FaEnvelope className="react-icons" /> :
+                <FaEnvelope className="react-icons" />
                 <a
                   href="mailto:benjamin.copinet@outlook.fr"
                   target="_blank"
                   rel="noreferrer"
                 >
+                  {" "}
                   benjamin.copinet@outlook.fr
                 </a>
               </p>
               <p>
-                <FaMapMarker className="react-icons" /> : Reims, France
+                <FaMapMarker className="react-icons" /> Reims, France
               </p>
             </div>
           </div>
