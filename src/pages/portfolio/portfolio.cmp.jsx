@@ -35,7 +35,7 @@ class PortfolioPage extends React.Component {
 
   createUrlArray = () => {
     fetch(
-      `https://api.benjamincopinet.fr/wp-json/wp/v2/media?include=${this.state.gallery}`
+      `https://api.benjamincopinet.fr/wp-json/wp/v2/media?per_page=100&include=${this.state.gallery}`
     )
       .then((response) => response.json())
       .then((data) => {
