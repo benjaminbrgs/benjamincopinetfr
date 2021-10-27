@@ -15,6 +15,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    document.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+    });
     fetch(`https://www.api.benjamincopinet.fr/wp-json/wp/v2/pages/4204`)
       .then((response) => response.json())
       .then((data) => {
